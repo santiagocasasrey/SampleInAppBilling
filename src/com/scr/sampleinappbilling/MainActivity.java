@@ -182,6 +182,11 @@ public class MainActivity extends ActionBarActivity implements OnClickListener{
 		btnAccion.setEnabled(enabled);
 	}
 	
-
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+		if (mHelper != null) mHelper.dispose();
+		mHelper = null;
+	}
 	
 }
